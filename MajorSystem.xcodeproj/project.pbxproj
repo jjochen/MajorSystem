@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		19F02469257A490E0017DBFE /* MajorSystemApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F02468257A490E0017DBFE /* MajorSystemApp.swift */; };
-		19F0246B257A490E0017DBFE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0246A257A490E0017DBFE /* ContentView.swift */; };
+		19F0246B257A490E0017DBFE /* NumbersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0246A257A490E0017DBFE /* NumbersView.swift */; };
 		19F0246D257A49100017DBFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F0246C257A49100017DBFE /* Assets.xcassets */; };
 		19F02470257A49100017DBFE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F0246F257A49100017DBFE /* Preview Assets.xcassets */; };
 		19F02472257A49100017DBFE /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F02471257A49100017DBFE /* Persistence.swift */; };
 		19F02475257A49100017DBFE /* MajorSystem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 19F02473257A49100017DBFE /* MajorSystem.xcdatamodeld */; };
 		19F02480257A49100017DBFE /* MajorSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0247F257A49100017DBFE /* MajorSystemTests.swift */; };
 		19F0248B257A49110017DBFE /* MajorSystemUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0248A257A49110017DBFE /* MajorSystemUITests.swift */; };
+		19F0249E257ACB920017DBFE /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0249D257ACB920017DBFE /* KeyboardResponder.swift */; };
+		19F024C9257ADAB70017DBFE /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F024C8257ADAB70017DBFE /* AppView.swift */; };
+		19F024EA257D7A460017DBFE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F024E9257D7A460017DBFE /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +40,7 @@
 /* Begin PBXFileReference section */
 		19F02465257A490E0017DBFE /* MajorSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MajorSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F02468257A490E0017DBFE /* MajorSystemApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorSystemApp.swift; sourceTree = "<group>"; };
-		19F0246A257A490E0017DBFE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		19F0246A257A490E0017DBFE /* NumbersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersView.swift; sourceTree = "<group>"; };
 		19F0246C257A49100017DBFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19F0246F257A49100017DBFE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		19F02471257A49100017DBFE /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -49,6 +52,9 @@
 		19F02486257A49100017DBFE /* MajorSystemUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MajorSystemUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F0248A257A49110017DBFE /* MajorSystemUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorSystemUITests.swift; sourceTree = "<group>"; };
 		19F0248C257A49110017DBFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19F0249D257ACB920017DBFE /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
+		19F024C8257ADAB70017DBFE /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		19F024E9257D7A460017DBFE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +105,14 @@
 		19F02467257A490E0017DBFE /* MajorSystem */ = {
 			isa = PBXGroup;
 			children = (
-				19F02468257A490E0017DBFE /* MajorSystemApp.swift */,
-				19F0246A257A490E0017DBFE /* ContentView.swift */,
-				19F0246C257A49100017DBFE /* Assets.xcassets */,
-				19F02471257A49100017DBFE /* Persistence.swift */,
-				19F02476257A49100017DBFE /* Info.plist */,
-				19F02473257A49100017DBFE /* MajorSystem.xcdatamodeld */,
+				19F024A8257ACC900017DBFE /* App */,
+				19F024B6257AD6320017DBFE /* Numbers View */,
+				19F024F4257D7A550017DBFE /* Settings View */,
+				19F024A2257ACBF80017DBFE /* Core Data */,
+				19F024A4257ACC710017DBFE /* Helper */,
 				19F0246E257A49100017DBFE /* Preview Content */,
+				19F024AC257ACD050017DBFE /* Resources */,
+				19F02476257A49100017DBFE /* Info.plist */,
 			);
 			path = MajorSystem;
 			sourceTree = "<group>";
@@ -134,6 +141,56 @@
 				19F0248C257A49110017DBFE /* Info.plist */,
 			);
 			path = MajorSystemUITests;
+			sourceTree = "<group>";
+		};
+		19F024A2257ACBF80017DBFE /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				19F02471257A49100017DBFE /* Persistence.swift */,
+				19F02473257A49100017DBFE /* MajorSystem.xcdatamodeld */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		19F024A4257ACC710017DBFE /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				19F0249D257ACB920017DBFE /* KeyboardResponder.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		19F024A8257ACC900017DBFE /* App */ = {
+			isa = PBXGroup;
+			children = (
+				19F02468257A490E0017DBFE /* MajorSystemApp.swift */,
+				19F024C8257ADAB70017DBFE /* AppView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		19F024AC257ACD050017DBFE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				19F0246C257A49100017DBFE /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		19F024B6257AD6320017DBFE /* Numbers View */ = {
+			isa = PBXGroup;
+			children = (
+				19F0246A257A490E0017DBFE /* NumbersView.swift */,
+			);
+			path = "Numbers View";
+			sourceTree = "<group>";
+		};
+		19F024F4257D7A550017DBFE /* Settings View */ = {
+			isa = PBXGroup;
+			children = (
+				19F024E9257D7A460017DBFE /* SettingsView.swift */,
+			);
+			path = "Settings View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,9 +322,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19F024EA257D7A460017DBFE /* SettingsView.swift in Sources */,
 				19F02472257A49100017DBFE /* Persistence.swift in Sources */,
-				19F0246B257A490E0017DBFE /* ContentView.swift in Sources */,
+				19F0246B257A490E0017DBFE /* NumbersView.swift in Sources */,
+				19F024C9257ADAB70017DBFE /* AppView.swift in Sources */,
 				19F02475257A49100017DBFE /* MajorSystem.xcdatamodeld in Sources */,
+				19F0249E257ACB920017DBFE /* KeyboardResponder.swift in Sources */,
 				19F02469257A490E0017DBFE /* MajorSystemApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
