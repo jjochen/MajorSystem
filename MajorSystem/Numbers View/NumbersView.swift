@@ -12,15 +12,18 @@ struct NumbersView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \Number.numberOfDigits, ascending: true),
+            NSSortDescriptor(keyPath: \Number.value, ascending: true),
+        ],
         animation: .default)
-    private var items: FetchedResults<Item>
+    private var numbers: FetchedResults<Number>
 
     var body: some View {
         NavigationView {
             List {
-                ForEach(items) { item in
-                    Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                ForEach(numbers) { number in
+                    Text("\(number.displayString)")
                 }
                 .onDelete(perform: deleteItems)
             }
@@ -35,9 +38,9 @@ struct NumbersView: View {
 
     private func addItem() {
         withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
+            let newNumber = Number(context: viewContext)
+            newNumber.numberOfDigits = 2
+            newNumber.value = 42
             do {
                 try viewContext.save()
             } catch {
@@ -51,7 +54,7 @@ struct NumbersView: View {
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
+            offsets.map { numbers[$0] }.forEach(viewContext.delete)
 
             do {
                 try viewContext.save()
@@ -65,10 +68,9 @@ struct NumbersView: View {
     }
 }
 
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
+private let numberFormatter: NumberFormatter = {
+    let formatter = NumberFormatter()
+    formatter.allowsFloats = false
     return formatter
 }()
 

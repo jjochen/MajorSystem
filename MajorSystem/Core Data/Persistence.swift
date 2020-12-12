@@ -11,9 +11,11 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+        let mapping = viewContext.createMapping(withName: "preview")
+        mapping.addAllNumbers(withNumberOfDigits: 1, inContext: viewContext)
+        for value in 0..<15 {
+            let number = mapping.addNumber(withValue: Int32(value), numberOfDigits: 2, inContext: viewContext)
+            number.addWord(withValue: "Word", inContext: viewContext)
         }
         do {
             try viewContext.save()

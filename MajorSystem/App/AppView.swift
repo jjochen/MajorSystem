@@ -15,7 +15,7 @@ struct AppView: View {
                     Image(systemName: "list.number")
                     Text("Numbers")
                 }
-            Text("Trainer")
+            Text("Practice")
                 .tabItem {
                     Image(systemName: "tray.full")
                     Text("Practice")
