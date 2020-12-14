@@ -18,15 +18,22 @@ extension Mapping {
         return number
     }
 
-//    func number(withValue value: Int32, numberOfDigits: Int16, inContext context: NSManagedObjectContext) {
-//        let fetchRequest: NSFetchRequest = Number.fetchRequest()
-//        var error: NSError?
-//        var results = context.execute(fetchRequest)
-//        if let error = error {
-//            println("Unresolved error \(error), \(error.userInfo)")
-//            abort()
-//        }
-//    }
+    func number(withValue value: Int32, numberOfDigits: Int16, inContext context: NSManagedObjectContext) throws -> Number? {
+        var subpredicates: [NSPredicate] = []
+        subpredicates.append(NSPredicate(format: "mapping == %@", self))
+        subpredicates.append(NSPredicate(format: "numberOfDigits == %d", numberOfDigits))
+        subpredicates.append(NSPredicate(format: "value == %d", value))
+        let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: subpredicates)
+        let results = try context.fetchEntities(ofType: Number.self, predicate: predicate)
+        return results.first
+    }
+
+    func fetchOrAddNumber(withValue value: Int32, numberOfDigits: Int16, inContext context: NSManagedObjectContext) throws -> Number {
+        if let number = try number(withValue: value, numberOfDigits: numberOfDigits, inContext: context) {
+            return number
+        }
+        return addNumber(withValue: value, numberOfDigits: numberOfDigits, inContext: context)
+    }
 
     func addAllNumbers(withNumberOfDigits numberOfDigits: Int16, inContext context: NSManagedObjectContext) {
         let maxValue = Int(pow(Double(10), Double(numberOfDigits)))

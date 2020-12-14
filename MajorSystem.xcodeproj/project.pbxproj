@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19D34C57258810B8002AE9DA /* WordImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D34C56258810B8002AE9DA /* WordImageView.swift */; };
 		19F02469257A490E0017DBFE /* MajorSystemApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F02468257A490E0017DBFE /* MajorSystemApp.swift */; };
 		19F0246B257A490E0017DBFE /* NumbersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0246A257A490E0017DBFE /* NumbersView.swift */; };
 		19F0246D257A49100017DBFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F0246C257A49100017DBFE /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		19F0253525823AF60017DBFE /* Number+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0253425823AF60017DBFE /* Number+Convenience.swift */; };
 		19F0253A25823B340017DBFE /* Word+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0253925823B340017DBFE /* Word+Convenience.swift */; };
 		19F0253F2582B28C0017DBFE /* Mapping+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0253E2582B28C0017DBFE /* Mapping+Convenience.swift */; };
+		19F025512587645E0017DBFE /* NumberRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F025502587645D0017DBFE /* NumberRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19D34C56258810B8002AE9DA /* WordImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordImageView.swift; sourceTree = "<group>"; };
 		19F02465257A490E0017DBFE /* MajorSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MajorSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F02468257A490E0017DBFE /* MajorSystemApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorSystemApp.swift; sourceTree = "<group>"; };
 		19F0246A257A490E0017DBFE /* NumbersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersView.swift; sourceTree = "<group>"; };
@@ -64,6 +67,7 @@
 		19F0253425823AF60017DBFE /* Number+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Number+Convenience.swift"; sourceTree = "<group>"; };
 		19F0253925823B340017DBFE /* Word+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Word+Convenience.swift"; sourceTree = "<group>"; };
 		19F0253E2582B28C0017DBFE /* Mapping+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mapping+Convenience.swift"; sourceTree = "<group>"; };
+		19F025502587645D0017DBFE /* NumberRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				19F024A8257ACC900017DBFE /* App */,
-				19F024B6257AD6320017DBFE /* Numbers View */,
-				19F024F4257D7A550017DBFE /* Settings View */,
+				19F024B6257AD6320017DBFE /* Views */,
 				19F024A2257ACBF80017DBFE /* Core Data */,
 				19F025172580E0D80017DBFE /* Model */,
 				19F024A4257ACC710017DBFE /* Helper */,
@@ -192,20 +195,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		19F024B6257AD6320017DBFE /* Numbers View */ = {
+		19F024B6257AD6320017DBFE /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				19F0246A257A490E0017DBFE /* NumbersView.swift */,
-			);
-			path = "Numbers View";
-			sourceTree = "<group>";
-		};
-		19F024F4257D7A550017DBFE /* Settings View */ = {
-			isa = PBXGroup;
-			children = (
+				19F025502587645D0017DBFE /* NumberRow.swift */,
 				19F024E9257D7A460017DBFE /* SettingsView.swift */,
+				19D34C56258810B8002AE9DA /* WordImageView.swift */,
 			);
-			path = "Settings View";
+			path = Views;
 			sourceTree = "<group>";
 		};
 		19F025172580E0D80017DBFE /* Model */ = {
@@ -351,10 +349,12 @@
 				19F0252D258235750017DBFE /* NSManagedObjectContext+Convenience.swift in Sources */,
 				19F0253F2582B28C0017DBFE /* Mapping+Convenience.swift in Sources */,
 				19F0246B257A490E0017DBFE /* NumbersView.swift in Sources */,
+				19F025512587645E0017DBFE /* NumberRow.swift in Sources */,
 				19F024C9257ADAB70017DBFE /* AppView.swift in Sources */,
 				19F02475257A49100017DBFE /* MajorSystem.xcdatamodeld in Sources */,
 				19F0249E257ACB920017DBFE /* KeyboardResponder.swift in Sources */,
 				19F02469257A490E0017DBFE /* MajorSystemApp.swift in Sources */,
+				19D34C57258810B8002AE9DA /* WordImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

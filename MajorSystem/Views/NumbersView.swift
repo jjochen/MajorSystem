@@ -21,20 +21,18 @@ struct NumbersView: View {
 
     var body: some View {
         NavigationView {
-            List {
-                ForEach(numbers) { number in
-                    Text("\(number.displayString)")
-                }
-                .onDelete(perform: deleteItems)
+            List(numbers) { number in
+                NumberRow(number: number)
             }
-            .toolbar {
-                Button(action: addItem) {
-                    Label("Add Item", systemImage: "plus")
-                }
-            }
-            .navigationBarTitle("Numbers")
         }
+        .toolbar {
+            Button(action: addItem) {
+                Label("Add Item", systemImage: "plus")
+            }
+        }
+        .navigationBarTitle("Numbers")
     }
+
 
     private func addItem() {
         withAnimation {
@@ -80,3 +78,4 @@ struct NumbersView_Previews: PreviewProvider {
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
+

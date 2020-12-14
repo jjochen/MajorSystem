@@ -7,9 +7,17 @@
 
 import Foundation
 import CoreData
+import SwiftUI
 
 extension Word {
     func useAsMainWord() {
         number?.mainWord = self
+    }
+
+    var image: UIImage? {
+        guard let data = imageData else {
+            return nil
+        }
+        return UIImage(data: data)
     }
 }
