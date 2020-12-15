@@ -10,24 +10,22 @@ import XCTest
 
 class MajorSystemTests: XCTestCase {
 
+    var persistenceController: PersistenceController!
+
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        persistenceController = PersistenceController(inMemory: true)
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        persistenceController = nil
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testMappingCreation() throws {
+        let context = persistenceController.container.viewContext
+        let mapping = context.createMapping(withName: "test")
+        XCTAssertNotNil(mapping)
+        try! context.save()
+        let fetchResult = try! context.fetchMapping(withName: "test")
+        XCTAssertEqual(mapping, fetchResult)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

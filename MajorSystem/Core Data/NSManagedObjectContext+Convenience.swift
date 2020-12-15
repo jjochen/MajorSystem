@@ -30,7 +30,7 @@ extension NSManagedObjectContext {
     @discardableResult
     func createMapping(withName name: String) -> Mapping {
         let mapping = Mapping(context: self)
-        mapping.name = "preview"
+        mapping.name = name
         return mapping
     }
 
