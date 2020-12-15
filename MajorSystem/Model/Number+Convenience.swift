@@ -2,25 +2,13 @@
 //  Number+Convenience.swift
 //  MajorSystem
 //
-//  Created by Jochen on 10.12.20.
+//  Created by Jochen on 15.12.20.
 //
 
 import Foundation
-import CoreData
 import SwiftUI
 
 extension Number {
-    @discardableResult
-    func addWord(withValue value: String, useAsMain: Bool = false, inContext context: NSManagedObjectContext) -> Word {
-        let word = Word(context: context)
-        word.value = value
-        addToPossibleWords(word)
-        if useAsMain {
-            mainWord = word
-        }
-        return word
-    }
-
     var displayString: String {
         numberFormatter.minimumIntegerDigits = Int(numberOfDigits)
         return numberFormatter.string(from: NSNumber(value: value)) ?? "\(value)"
@@ -31,7 +19,7 @@ extension Number {
     }
 
     var image: WordImageView {
-        return WordImageView(image: mainWord?.image)
+        return WordImageView(image: mainWord?.uiImage)
     }
 }
 

@@ -1,5 +1,5 @@
 //
-//  Mapping+Convenience.swift
+//  Mapping+CoreData.swift
 //  MajorSystem
 //
 //  Created by Jochen on 10.12.20.
