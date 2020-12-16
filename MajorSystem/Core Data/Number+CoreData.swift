@@ -10,7 +10,13 @@ import CoreData
 
 extension Number {
     @discardableResult
-    func addWord(withValue value: String, useAsMain: Bool = false, inContext context: NSManagedObjectContext) -> Word {
+    func addWord(withValue value: String, inContext context: NSManagedObjectContext) -> Word {
+        let useAsMain = !hasWords
+        return addWord(withValue: value, useAsMain: useAsMain, inContext: context)
+    }
+    
+    @discardableResult
+    func addWord(withValue value: String, useAsMain: Bool, inContext context: NSManagedObjectContext) -> Word {
         let word = Word(context: context)
         word.value = value
         addToPossibleWords(word)
@@ -20,9 +26,3 @@ extension Number {
         return word
     }
 }
-
-private let numberFormatter: NumberFormatter = {
-    let formatter = NumberFormatter()
-    formatter.allowsFloats = false
-    return formatter
-}()

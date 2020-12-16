@@ -21,6 +21,14 @@ extension Number {
     var image: WordImageView {
         return WordImageView(image: mainWord?.uiImage)
     }
+
+    var numberOfPossibleWords: Int {
+        return possibleWords?.count ?? 0
+    }
+    
+    var hasWords: Bool {
+        return numberOfPossibleWords > 0
+    }
 }
 
 private let numberFormatter: NumberFormatter = {

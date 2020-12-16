@@ -11,13 +11,15 @@ import CoreData
 // MARK: General
 extension NSManagedObjectContext {
     func fetchEntities<T: NSManagedObject>(ofType type: T.Type, predicate: NSPredicate? = nil) throws -> [T] {
-        let fetchRequest: NSFetchRequest<T> = T.fetchRequest() as! NSFetchRequest<T>
+        let entityName = String(describing: type)
+        let fetchRequest = NSFetchRequest<T>(entityName: entityName)
         fetchRequest.predicate = predicate
         return try fetch(fetchRequest)
     }
 
     func fetchEntities<T: NSManagedObject>(ofType type: T.Type, predicate: NSPredicate? = nil, success: @escaping ([T]) -> ()) throws {
-        let fetchRequest: NSFetchRequest<T> = T.fetchRequest() as! NSFetchRequest<T>
+        let entityName = String(describing: type)
+        let fetchRequest = NSFetchRequest<T>(entityName: entityName)
         let asyncFetchRequest = NSAsynchronousFetchRequest<T>(fetchRequest: fetchRequest) { (result) in
             success(result.finalResult ?? [])
         }
