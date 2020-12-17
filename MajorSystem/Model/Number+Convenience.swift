@@ -1,8 +1,9 @@
 //
-//  Number+Convenience.swift
-//  MajorSystem
+// Number+Convenience.swift
+// MajorSystem
 //
-//  Created by Jochen on 15.12.20.
+// Copyright (c) 2020 Jochen Pfeiffer
+// Created by Jochen on 17.12.20.
 //
 
 import Foundation
@@ -15,19 +16,19 @@ extension Number {
     }
 
     var mainWordValue: String {
-        return mainWord?.value ?? ""
+        mainWord?.value ?? ""
     }
 
     var image: WordImageView {
-        return WordImageView(image: mainWord?.uiImage)
+        WordImageView(image: mainWord?.uiImage)
     }
 
     var numberOfPossibleWords: Int {
-        return possibleWords?.count ?? 0
+        possibleWords?.count ?? 0
     }
-    
+
     var hasWords: Bool {
-        return numberOfPossibleWords > 0
+        numberOfPossibleWords > 0
     }
 }
 

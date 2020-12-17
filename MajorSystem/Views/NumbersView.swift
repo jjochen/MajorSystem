@@ -1,12 +1,13 @@
 //
-//  NumbersView.swift
-//  MajorSystem
+// NumbersView.swift
+// MajorSystem
 //
-//  Created by Jochen on 04.12.20.
+// Copyright (c) 2020 Jochen Pfeiffer
+// Created by Jochen on 17.12.20.
 //
 
-import SwiftUI
 import CoreData
+import SwiftUI
 
 struct NumbersView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -16,7 +17,8 @@ struct NumbersView: View {
             NSSortDescriptor(keyPath: \Number.numberOfDigits, ascending: true),
             NSSortDescriptor(keyPath: \Number.value, ascending: true),
         ],
-        animation: .default)
+        animation: .default
+    )
     private var numbers: FetchedResults<Number>
 
     var body: some View {
@@ -32,7 +34,6 @@ struct NumbersView: View {
         }
         .navigationBarTitle("Numbers")
     }
-
 
     private func addItem() {
         withAnimation {
@@ -78,4 +79,3 @@ struct NumbersView_Previews: PreviewProvider {
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
-

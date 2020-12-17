@@ -1,8 +1,9 @@
 //
-//  SettingsView.swift
-//  MajorSystem
+// SettingsView.swift
+// MajorSystem
 //
-//  Created by Jochen on 06.12.20.
+// Copyright (c) 2020 Jochen Pfeiffer
+// Created by Jochen on 17.12.20.
 //
 
 import SwiftUI
@@ -11,9 +12,7 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("General")) {
-
-                }
+                Section(header: Text("General")) {}
             }
             .navigationBarTitle("Settings")
         }

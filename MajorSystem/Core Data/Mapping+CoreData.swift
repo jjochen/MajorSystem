@@ -1,12 +1,13 @@
 //
-//  Mapping+CoreData.swift
-//  MajorSystem
+// Mapping+CoreData.swift
+// MajorSystem
 //
-//  Created by Jochen on 10.12.20.
+// Copyright (c) 2020 Jochen Pfeiffer
+// Created by Jochen on 17.12.20.
 //
 
-import Foundation
 import CoreData
+import Foundation
 
 extension Mapping {
     @discardableResult
@@ -37,7 +38,7 @@ extension Mapping {
 
     func addAllNumbers(withNumberOfDigits numberOfDigits: Int16, inContext context: NSManagedObjectContext) {
         let maxValue = Int(pow(Double(10), Double(numberOfDigits)))
-        for value in 0..<maxValue {
+        for value in 0 ..< maxValue {
             addNumber(withValue: Int32(value), numberOfDigits: numberOfDigits, inContext: context)
         }
     }

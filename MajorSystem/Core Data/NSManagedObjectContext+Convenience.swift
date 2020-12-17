@@ -1,14 +1,16 @@
 //
-//  ManagedObjectContext+Convenience.swift
-//  MajorSystem
+// NSManagedObjectContext+Convenience.swift
+// MajorSystem
 //
-//  Created by Jochen on 10.12.20.
+// Copyright (c) 2020 Jochen Pfeiffer
+// Created by Jochen on 17.12.20.
 //
 
-import Foundation
 import CoreData
+import Foundation
 
 // MARK: General
+
 extension NSManagedObjectContext {
     func fetchEntities<T: NSManagedObject>(ofType type: T.Type, predicate: NSPredicate? = nil) throws -> [T] {
         let entityName = String(describing: type)
@@ -17,10 +19,10 @@ extension NSManagedObjectContext {
         return try fetch(fetchRequest)
     }
 
-    func fetchEntities<T: NSManagedObject>(ofType type: T.Type, predicate: NSPredicate? = nil, success: @escaping ([T]) -> ()) throws {
+    func fetchEntities<T: NSManagedObject>(ofType type: T.Type, predicate _: NSPredicate? = nil, success: @escaping ([T]) -> Void) throws {
         let entityName = String(describing: type)
         let fetchRequest = NSFetchRequest<T>(entityName: entityName)
-        let asyncFetchRequest = NSAsynchronousFetchRequest<T>(fetchRequest: fetchRequest) { (result) in
+        let asyncFetchRequest = NSAsynchronousFetchRequest<T>(fetchRequest: fetchRequest) { result in
             success(result.finalResult ?? [])
         }
         try execute(asyncFetchRequest)
@@ -28,6 +30,7 @@ extension NSManagedObjectContext {
 }
 
 // MARK: Mapping
+
 extension NSManagedObjectContext {
     @discardableResult
     func createMapping(withName name: String) -> Mapping {
@@ -51,6 +54,7 @@ extension NSManagedObjectContext {
 }
 
 // MARK: Numbers
+
 extension NSManagedObjectContext {
     func fetchNumber(withValue value: Int32, numberOfDigits: Int16, inMappingWithName mapping: String) throws -> Number? {
         var subpredicates: [NSPredicate] = []

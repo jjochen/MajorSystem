@@ -1,17 +1,16 @@
 //
-//  WordConvenienceTests.swift
-//  MajorSystemTests
+// WordConvenienceTests.swift
+// MajorSystem
 //
-//  Created by Jochen on 16.12.20.
+// Copyright (c) 2020 Jochen Pfeiffer
+// Created by Jochen on 17.12.20.
 //
 
-import XCTest
 import CoreData
 @testable import MajorSystem
-
+import XCTest
 
 class WordConvenienceTests: XCTestCase {
-
     var context: NSManagedObjectContext!
 
     override func setUpWithError() throws {

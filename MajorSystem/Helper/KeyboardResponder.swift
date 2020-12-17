@@ -1,12 +1,13 @@
 //
-//  KeyboardResponder.swift
-//  MajorSystem
+// KeyboardResponder.swift
+// MajorSystem
 //
-//  Created by Jochen on 04.12.20.
+// Copyright (c) 2020 Jochen Pfeiffer
+// Created by Jochen on 17.12.20.
 //
 
-import SwiftUI
 import Combine
+import SwiftUI
 
 protocol KeyboardResponderProtocol {
     var currentHeight: CGFloat { get }

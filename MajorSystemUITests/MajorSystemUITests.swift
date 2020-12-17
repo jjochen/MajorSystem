@@ -1,14 +1,14 @@
 //
-//  MajorSystemUITests.swift
-//  MajorSystemUITests
+// MajorSystemUITests.swift
+// MajorSystem
 //
-//  Created by Jochen on 04.12.20.
+// Copyright (c) 2020 Jochen Pfeiffer
+// Created by Jochen on 17.12.20.
 //
 
 import XCTest
 
 class MajorSystemUITests: XCTestCase {
-
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 

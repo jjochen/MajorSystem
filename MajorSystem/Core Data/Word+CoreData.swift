@@ -1,13 +1,12 @@
 //
-//  Word+CoreData.swift
-//  MajorSystem
+// Word+CoreData.swift
+// MajorSystem
 //
-//  Created by Jochen on 15.12.20.
+// Copyright (c) 2020 Jochen Pfeiffer
+// Created by Jochen on 17.12.20.
 //
 
-import Foundation
 import CoreData
+import Foundation
 
-extension Word {
-
-}
+extension Word {}

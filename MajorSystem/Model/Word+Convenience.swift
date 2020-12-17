@@ -1,8 +1,9 @@
 //
-//  Word+Convenience.swift
-//  MajorSystem
+// Word+Convenience.swift
+// MajorSystem
 //
-//  Created by Jochen on 10.12.20.
+// Copyright (c) 2020 Jochen Pfeiffer
+// Created by Jochen on 17.12.20.
 //
 
 import Foundation
@@ -20,7 +21,7 @@ extension Word {
             }
             return UIImage(data: data)
         }
-        set (image) {
+        set(image) {
             imageData = image?.pngData()
         }
     }

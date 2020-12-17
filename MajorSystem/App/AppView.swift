@@ -1,8 +1,9 @@
 //
-//  AppView.swift
-//  MajorSystem
+// AppView.swift
+// MajorSystem
 //
-//  Created by Jochen on 04.12.20.
+// Copyright (c) 2020 Jochen Pfeiffer
+// Created by Jochen on 17.12.20.
 //
 
 import SwiftUI
@@ -19,19 +20,16 @@ struct AppView: View {
                 .tabItem {
                     Image(systemName: "tray.full")
                     Text("Practice")
-
                 }
             Text("Translator")
                 .tabItem {
                     Image(systemName: "globe")
                     Text("Translator")
-
                 }
             SettingsView()
                 .tabItem {
                     Image(systemName: "gear")
                     Text("Settings")
-
                 }
         }
     }

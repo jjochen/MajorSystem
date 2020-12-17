@@ -1,12 +1,13 @@
 //
-//  Number+CoreData.swift
-//  MajorSystem
+// Number+CoreData.swift
+// MajorSystem
 //
-//  Created by Jochen on 10.12.20.
+// Copyright (c) 2020 Jochen Pfeiffer
+// Created by Jochen on 17.12.20.
 //
 
-import Foundation
 import CoreData
+import Foundation
 
 extension Number {
     @discardableResult
@@ -14,7 +15,7 @@ extension Number {
         let useAsMain = !hasWords
         return addWord(withValue: value, useAsMain: useAsMain, inContext: context)
     }
-    
+
     @discardableResult
     func addWord(withValue value: String, useAsMain: Bool, inContext context: NSManagedObjectContext) -> Word {
         let word = Word(context: context)

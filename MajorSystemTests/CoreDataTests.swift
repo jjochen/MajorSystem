@@ -1,16 +1,16 @@
 //
-//  MajorSystemTests.swift
-//  MajorSystemTests
+// CoreDataTests.swift
+// MajorSystem
 //
-//  Created by Jochen on 04.12.20.
+// Copyright (c) 2020 Jochen Pfeiffer
+// Created by Jochen on 17.12.20.
 //
 
-import XCTest
 import CoreData
 @testable import MajorSystem
+import XCTest
 
 class MajorSystemTests: XCTestCase {
-
     var context: NSManagedObjectContext!
 
     override func setUpWithError() throws {
@@ -91,5 +91,4 @@ class MajorSystemTests: XCTestCase {
         let fetchResult = try context.fetchOrCreateNumber(withValue: value, numberOfDigits: numberOfDigits, inMappingWithName: mappingName)
         XCTAssertEqual(number, fetchResult)
     }
-    
 }
