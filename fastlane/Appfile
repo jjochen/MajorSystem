@@ -1,0 +1,8 @@
+app_identifier("com.jochen-pfeiffer.Major-System") # The bundle identifier of your app
+apple_id("apple@jochen-pfeiffer.com") # Your Apple email address
+
+itc_team_id("309958") # App Store Connect Team ID
+team_id("2TV9GXC7CB") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile
