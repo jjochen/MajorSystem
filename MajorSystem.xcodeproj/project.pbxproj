@@ -14,7 +14,7 @@
 		19D34C6D2588C49F002AE9DA /* Word+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D34C6C2588C49F002AE9DA /* Word+CoreData.swift */; };
 		19D34C722588C4FB002AE9DA /* Mapping+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D34C712588C4FB002AE9DA /* Mapping+Convenience.swift */; };
 		19F02469257A490E0017DBFE /* MajorSystemApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F02468257A490E0017DBFE /* MajorSystemApp.swift */; };
-		19F0246B257A490E0017DBFE /* NumbersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0246A257A490E0017DBFE /* NumbersView.swift */; };
+		19F0246B257A490E0017DBFE /* NumbersOrganizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0246A257A490E0017DBFE /* NumbersOrganizerView.swift */; };
 		19F0246D257A49100017DBFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F0246C257A49100017DBFE /* Assets.xcassets */; };
 		19F02470257A49100017DBFE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F0246F257A49100017DBFE /* Preview Assets.xcassets */; };
 		19F02472257A49100017DBFE /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F02471257A49100017DBFE /* Persistence.swift */; };
@@ -23,7 +23,7 @@
 		19F0248B257A49110017DBFE /* MajorSystemUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0248A257A49110017DBFE /* MajorSystemUITests.swift */; };
 		19F0249E257ACB920017DBFE /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0249D257ACB920017DBFE /* KeyboardResponder.swift */; };
 		19F024C9257ADAB70017DBFE /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F024C8257ADAB70017DBFE /* AppView.swift */; };
-		19F024EA257D7A460017DBFE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F024E9257D7A460017DBFE /* SettingsView.swift */; };
+		19F024EA257D7A460017DBFE /* NumbersOrganizerPreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F024E9257D7A460017DBFE /* NumbersOrganizerPreferencesView.swift */; };
 		19F0252D258235750017DBFE /* NSManagedObjectContext+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0252C258235750017DBFE /* NSManagedObjectContext+Convenience.swift */; };
 		19F0253525823AF60017DBFE /* Number+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0253425823AF60017DBFE /* Number+CoreData.swift */; };
 		19F0253A25823B340017DBFE /* Word+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0253925823B340017DBFE /* Word+Convenience.swift */; };
@@ -57,7 +57,7 @@
 		19D34C712588C4FB002AE9DA /* Mapping+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mapping+Convenience.swift"; sourceTree = "<group>"; };
 		19F02465257A490E0017DBFE /* MajorSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MajorSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F02468257A490E0017DBFE /* MajorSystemApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorSystemApp.swift; sourceTree = "<group>"; };
-		19F0246A257A490E0017DBFE /* NumbersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersView.swift; sourceTree = "<group>"; };
+		19F0246A257A490E0017DBFE /* NumbersOrganizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersOrganizerView.swift; sourceTree = "<group>"; };
 		19F0246C257A49100017DBFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19F0246F257A49100017DBFE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		19F02471257A49100017DBFE /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 		19F0248C257A49110017DBFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19F0249D257ACB920017DBFE /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
 		19F024C8257ADAB70017DBFE /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
-		19F024E9257D7A460017DBFE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		19F024E9257D7A460017DBFE /* NumbersOrganizerPreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersOrganizerPreferencesView.swift; sourceTree = "<group>"; };
 		19F024FB257E8F5E0017DBFE /* MajorSystem.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MajorSystem.entitlements; sourceTree = "<group>"; };
 		19F0252C258235750017DBFE /* NSManagedObjectContext+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Convenience.swift"; sourceTree = "<group>"; };
 		19F0253425823AF60017DBFE /* Number+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Number+CoreData.swift"; sourceTree = "<group>"; };
@@ -210,9 +210,9 @@
 		19F024B6257AD6320017DBFE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				19F0246A257A490E0017DBFE /* NumbersView.swift */,
+				19F0246A257A490E0017DBFE /* NumbersOrganizerView.swift */,
 				19F025502587645D0017DBFE /* NumberRow.swift */,
-				19F024E9257D7A460017DBFE /* SettingsView.swift */,
+				19F024E9257D7A460017DBFE /* NumbersOrganizerPreferencesView.swift */,
 				19D34C56258810B8002AE9DA /* WordImageView.swift */,
 			);
 			path = Views;
@@ -357,13 +357,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19F024EA257D7A460017DBFE /* SettingsView.swift in Sources */,
+				19F024EA257D7A460017DBFE /* NumbersOrganizerPreferencesView.swift in Sources */,
 				19F0253A25823B340017DBFE /* Word+Convenience.swift in Sources */,
 				19F02472257A49100017DBFE /* Persistence.swift in Sources */,
 				19F0253525823AF60017DBFE /* Number+CoreData.swift in Sources */,
 				19F0252D258235750017DBFE /* NSManagedObjectContext+Convenience.swift in Sources */,
 				19F0253F2582B28C0017DBFE /* Mapping+CoreData.swift in Sources */,
-				19F0246B257A490E0017DBFE /* NumbersView.swift in Sources */,
+				19F0246B257A490E0017DBFE /* NumbersOrganizerView.swift in Sources */,
 				19F025512587645E0017DBFE /* NumberRow.swift in Sources */,
 				19D34C722588C4FB002AE9DA /* Mapping+Convenience.swift in Sources */,
 				19D34C6D2588C49F002AE9DA /* Word+CoreData.swift in Sources */,

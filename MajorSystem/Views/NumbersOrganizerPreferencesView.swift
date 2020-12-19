@@ -7,19 +7,19 @@
 
 import SwiftUI
 
-struct SettingsView: View {
+struct NumbersOrganizerPreferencesView: View {
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("General")) {}
             }
-            .navigationBarTitle("Settings")
+            .navigationBarTitle("Preferences")
         }
     }
 }
 
-struct SettingsView_Previews: PreviewProvider {
+struct NumbersOrganizerPreferencesView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        NumbersOrganizerPreferencesView()
     }
 }

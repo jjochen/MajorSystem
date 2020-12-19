@@ -1,5 +1,5 @@
 //
-// NumbersView.swift
+// NumbersOrganizerView.swift
 // MajorSystem
 //
 // Copyright (c) 2020 Jochen Pfeiffer
@@ -8,7 +8,7 @@
 import CoreData
 import SwiftUI
 
-struct NumbersView: View {
+struct NumbersOrganizerView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
@@ -25,13 +25,17 @@ struct NumbersView: View {
             List(numbers) { number in
                 NumberRow(number: number)
             }
-        }
-        .toolbar {
-            Button(action: addItem) {
-                Label("Add Item", systemImage: "plus")
+            .navigationBarTitle("Organizer")
+            .toolbar {
+                Button(action: showPreferences) {
+                    Label("Preferences", systemImage: "gear")
+                }
             }
         }
-        .navigationBarTitle("Numbers")
+    }
+
+    private func showPreferences() {
+        
     }
 
     private func addItem() {
@@ -72,9 +76,9 @@ private let numberFormatter: NumberFormatter = {
     return formatter
 }()
 
-struct NumbersView_Previews: PreviewProvider {
+struct NumbersOrganizerView_Previews: PreviewProvider {
     static var previews: some View {
-        NumbersView()
+        NumbersOrganizerView()
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
