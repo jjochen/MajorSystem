@@ -11,6 +11,8 @@ import SwiftUI
 struct NumbersOrganizerView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
+    @State var showingPreferences = false
+
     @FetchRequest(
         sortDescriptors: [
             NSSortDescriptor(keyPath: \Number.numberOfDigits, ascending: true),
@@ -22,59 +24,27 @@ struct NumbersOrganizerView: View {
 
     var body: some View {
         NavigationView {
-            List(numbers) { number in
-                NumberRow(number: number)
-            }
-            .navigationBarTitle("Organizer")
-            .toolbar {
-                Button(action: showPreferences) {
-                    Label("Preferences", systemImage: "gear")
+            List {
+                ForEach(numbers) { number in
+                    NumberRow(number: number)
                 }
             }
+            .listStyle(PlainListStyle())
+            .navigationBarTitle("Numbers")
+            .navigationBarItems(trailing:
+                Button(action: {
+                    self.showingPreferences.toggle()
+                }) {
+                    Image(systemName: "gear")
+                        .font(Font.system(.title))
+                }
+            )
         }
-    }
-
-    private func showPreferences() {
-        
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newNumber = Number(context: viewContext)
-            newNumber.numberOfDigits = 2
-            newNumber.value = 42
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { numbers[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
+        .sheet(isPresented: $showingPreferences, content: {
+            NumbersOrganizerPreferencesView(isPresented: self.$showingPreferences)
+        })
     }
 }
-
-private let numberFormatter: NumberFormatter = {
-    let formatter = NumberFormatter()
-    formatter.allowsFloats = false
-    return formatter
-}()
 
 struct NumbersOrganizerView_Previews: PreviewProvider {
     static var previews: some View {
