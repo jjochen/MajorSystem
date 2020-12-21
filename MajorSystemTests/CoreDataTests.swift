@@ -58,11 +58,11 @@ class MajorSystemTests: XCTestCase {
         XCTAssertEqual(number, fetchResult)
     }
 
-    func testNumberAddAllToMapping() throws {
+    func testMappingAddAllNumbers() throws {
         let mappingName = "mapping"
         let numberOfDigits: Int16 = 3
         let mapping = context.createMapping(withName: mappingName)
-        mapping.addAllNumbers(withNumberOfDigits: numberOfDigits, inContext: context)
+        mapping.addNumbers(withNumberOfDigits: numberOfDigits, inContext: context)
 
         let fetchResults = try context.fetchEntities(ofType: Number.self)
         XCTAssertEqual(1000, fetchResults.count)
@@ -89,5 +89,16 @@ class MajorSystemTests: XCTestCase {
 
         let fetchResult = try context.fetchOrCreateNumber(withValue: value, numberOfDigits: numberOfDigits, inMappingWithName: mappingName)
         XCTAssertEqual(number, fetchResult)
+    }
+
+    func testMappingCheckNumbers() throws {
+        let mappingName = "mapping"
+        let numberOfDigits: Int16 = 2
+        let mapping = context.createMapping(withName: mappingName)
+        mapping.addNumber(withValue: 42, numberOfDigits: numberOfDigits, inContext: context)
+        try mapping.checkNumbers(withNumberOfDigits: numberOfDigits, inContext: context)
+
+        let fetchResults = try context.fetchEntities(ofType: Number.self)
+        XCTAssertEqual(100, fetchResults.count)
     }
 }

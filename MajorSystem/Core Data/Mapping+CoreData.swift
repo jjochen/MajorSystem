@@ -35,10 +35,17 @@ extension Mapping {
         return addNumber(withValue: value, numberOfDigits: numberOfDigits, inContext: context)
     }
 
-    func addAllNumbers(withNumberOfDigits numberOfDigits: Int16, inContext context: NSManagedObjectContext) {
+    func addNumbers(withNumberOfDigits numberOfDigits: Int16, inContext context: NSManagedObjectContext) {
         let maxValue = Int(pow(Double(10), Double(numberOfDigits)))
         for value in 0 ..< maxValue {
             addNumber(withValue: Int32(value), numberOfDigits: numberOfDigits, inContext: context)
+        }
+    }
+
+    func checkNumbers(withNumberOfDigits numberOfDigits: Int16, inContext context: NSManagedObjectContext) throws {
+        let maxValue = Int(pow(Double(10), Double(numberOfDigits)))
+        for value in 0 ..< maxValue {
+            _ = try fetchOrAddNumber(withValue: Int32(value), numberOfDigits: numberOfDigits, inContext: context)
         }
     }
 }

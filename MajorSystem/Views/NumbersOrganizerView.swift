@@ -36,7 +36,7 @@ struct NumbersOrganizerView: View {
                     self.showingPreferences.toggle()
                 }) {
                     Image(systemName: "gear")
-                        .font(Font.system(.title))
+                        .font(.system(.title))
                 }
             )
         }
