@@ -10,15 +10,15 @@ import SwiftUI
 
 struct NumbersOrganizerPreferencesView: View {
     @Binding var isPresented: Bool
-
     @State private var maxNumberOfDigits = 1
+    @EnvironmentObject var userPreferences: UserPreferences
 
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("General")) {
-                    Picker(selection: $maxNumberOfDigits, label: Text("Maximum number of digits")) {
-                        ForEach(1 ..< 5) {
+                    Picker(selection: $userPreferences.maxNumberOfDigitsInOrganizer, label: Text("Maximum number of digits")) {
+                        ForEach(0 ..< 4) {
                             Text($0.description)
                         }
                     }
