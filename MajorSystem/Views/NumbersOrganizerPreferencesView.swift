@@ -2,7 +2,7 @@
 // NumbersOrganizerPreferencesView.swift
 // MajorSystem
 //
-// Copyright (c) 2020 Jochen Pfeiffer
+// Copyright (c) 2021 Jochen Pfeiffer
 //
 
 import Combine

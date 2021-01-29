@@ -1,1 +1,3 @@
 --header "\n{file}\nMajorSystem\n\nCopyright (c) {year} Jochen Pfeiffer\n"
+--enable isEmpty
+--ifdef no-indent
