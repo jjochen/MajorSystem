@@ -35,8 +35,10 @@ struct NumbersOrganizerPreferencesView: View {
     }
 }
 
+#if DEBUG
 struct NumbersOrganizerPreferencesView_Previews: PreviewProvider {
     static var previews: some View {
         NumbersOrganizerPreferencesView(isPresented: .constant(true))
     }
 }
+#endif

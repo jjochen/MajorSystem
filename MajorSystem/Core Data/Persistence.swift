@@ -8,15 +8,60 @@
 import CoreData
 
 struct PersistenceController {
+    #if DEBUG
+    static let previewNumbers =
+        [
+            1: [
+                0: "CIA",
+                1: "tea",
+                2: "Noah",
+                3: "home",
+                4: "raw",
+                5: "loo",
+                6: "shoe",
+                7: "cow",
+                8: "foe",
+                9: "bee",
+            ],
+            2: [
+                00: "sushi",
+                01: "seed",
+                02: "sun",
+                03: "sumo",
+                04: "czar",
+                05: "seal",
+                06: "switch",
+                07: "sock",
+                08: "safe",
+                09: "soap",
+                10: "dice",
+                11: "toad",
+                12: "dino",
+                13: "dam",
+                14: "tire",
+                15: "doll",
+                16: "tissue",
+                17: "dick",
+                18: "TV",
+                19: "tipi",
+                20: "noose",
+                21: "knight",
+                22: "onion",
+            ],
+        ]
+
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
         let mapping = viewContext.createMapping(withName: "preview")
-        mapping.addNumbers(withNumberOfDigits: 1, inContext: viewContext)
-        for value in 0 ..< 12 {
-            let number = mapping.addNumber(withValue: Int32(value), numberOfDigits: 2, inContext: viewContext)
-            number.addWord(withValue: "Word \(number.displayString)", useAsMain: true, inContext: viewContext)
+
+        for (numberOfDigits, numbers) in previewNumbers {
+            for (value, word) in numbers {
+                let number = mapping.addNumber(withValue: Int32(value), numberOfDigits: Int16(numberOfDigits), inContext: viewContext)
+                number.addWord(withValue: word, useAsMain: true, inContext: viewContext)
+            }
         }
+
         do {
             try viewContext.save()
         } catch {
@@ -27,6 +72,13 @@ struct PersistenceController {
         }
         return result
     }()
+
+    static var previewNumber: Number {
+        let context = PersistenceController.preview.container.viewContext
+        let number = try! context.fetchOrCreateNumber(withValue: 9, numberOfDigits: 2, inMappingWithName: "preview")
+        return number
+    }
+    #endif
 
     let container: NSPersistentCloudKitContainer
 

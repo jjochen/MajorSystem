@@ -21,6 +21,7 @@ struct WordImageView: View {
     }
 }
 
+#if DEBUG
 struct WordImageView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
@@ -30,3 +31,4 @@ struct WordImageView_Previews: PreviewProvider {
         .previewLayout(.fixed(width: 50, height: 50))
     }
 }
+#endif

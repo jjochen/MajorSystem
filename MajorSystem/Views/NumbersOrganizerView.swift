@@ -46,9 +46,11 @@ struct NumbersOrganizerView: View {
     }
 }
 
+#if DEBUG
 struct NumbersOrganizerView_Previews: PreviewProvider {
     static var previews: some View {
         NumbersOrganizerView()
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
+#endif

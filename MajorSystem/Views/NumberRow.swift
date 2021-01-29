@@ -22,17 +22,13 @@ struct NumberRow: View {
     }
 }
 
+#if DEBUG
 struct NumberRow_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            NumberRow(number: previewNumber)
+            NumberRow(number: PersistenceController.previewNumber)
         }
         .previewLayout(.fixed(width: 300, height: 70))
     }
-
-    static var previewNumber: Number {
-        let context = PersistenceController.preview.container.viewContext
-        let number = try! context.fetchOrCreateNumber(withValue: 9, numberOfDigits: 2, inMappingWithName: "preview")
-        return number
-    }
 }
+#endif
