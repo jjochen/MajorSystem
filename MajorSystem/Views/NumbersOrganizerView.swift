@@ -26,7 +26,10 @@ struct NumbersOrganizerView: View {
         NavigationView {
             List {
                 ForEach(numbers) { number in
-                    NumberRow(number: number)
+                    NavigationLink(destination:
+                        NumberDetailView(number: number)) {
+                        NumberRow(number: number)
+                    }
                 }
             }
             .listStyle(PlainListStyle())
