@@ -38,7 +38,9 @@ struct NumbersOrganizerPreferencesView: View {
 #if DEBUG
 struct NumbersOrganizerPreferencesView_Previews: PreviewProvider {
     static var previews: some View {
+        #warning("Needs mock object for user preferences")
         NumbersOrganizerPreferencesView(isPresented: .constant(true))
+            .environmentObject(UserPreferences())
     }
 }
 #endif
