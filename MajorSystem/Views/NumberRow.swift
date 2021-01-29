@@ -13,10 +13,12 @@ struct NumberRow: View {
     var body: some View {
         HStack {
             Text(number.displayString)
-            Spacer()
+                .font(.headline)
+                .frame(minWidth: 50, alignment: .leading)
             Text(number.mainWordValue)
+
+            Spacer()
             number.image
-                .cornerRadius(6)
                 .frame(width: 50, height: 50)
         }
     }

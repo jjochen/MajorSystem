@@ -9,14 +9,16 @@ import SwiftUI
 
 struct WordImageView: View {
     var image: UIImage?
+    var cornerRadius: CGFloat = 12
 
     var body: some View {
         if let image = image {
             Image(uiImage: image)
+                .cornerRadius(cornerRadius)
                 .scaledToFill()
         } else {
-            Rectangle()
-                .fill(Color.gray)
+            RoundedRectangle(cornerRadius: cornerRadius)
+                .stroke(Color.accentColor, style: StrokeStyle(lineWidth: 2, dash: [6]))
         }
     }
 }
