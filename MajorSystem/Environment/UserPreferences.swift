@@ -9,9 +9,20 @@ import Combine
 import Foundation
 
 class UserPreferences: ObservableObject {
+    static var maxAvailableNumberOfDigits = 3
+
     @PreferenceValue("maxNumberOfDigitsInOrganizer", defaultValue: 2) var maxNumberOfDigitsInOrganizer: Int {
         willSet {
             objectWillChange.send()
+        }
+    }
+
+    var indexOfMaxNumberOfDigitsInOrganizer: Int {
+        get {
+            maxNumberOfDigitsInOrganizer - 1
+        }
+        set {
+            maxNumberOfDigitsInOrganizer = newValue + 1
         }
     }
 }

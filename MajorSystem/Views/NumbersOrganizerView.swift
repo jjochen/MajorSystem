@@ -10,6 +10,7 @@ import SwiftUI
 
 struct NumbersOrganizerView: View {
     @Environment(\.managedObjectContext) private var viewContext
+    @EnvironmentObject private var userPreferences: UserPreferences
 
     @State var showingPreferences = false
 
