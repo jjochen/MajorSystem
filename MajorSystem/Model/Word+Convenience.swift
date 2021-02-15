@@ -9,6 +9,14 @@ import Foundation
 import SwiftUI
 
 extension Word {
+    var wrappedValue: String {
+        value ?? ""
+    }
+
+    var isMainWord: Bool {
+        isMainWordOfNumber != nil
+    }
+
     func setAsMainWord() {
         number?.mainWord = self
     }

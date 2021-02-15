@@ -22,6 +22,13 @@ extension Number {
         WordImageView(image: mainWord?.uiImage)
     }
 
+    var sortedWords: [Word] {
+        let words = possibleWords as? Set<Word> ?? []
+        return words.sorted {
+            $0.wrappedValue < $1.wrappedValue
+        }
+    }
+
     var numberOfPossibleWords: Int {
         possibleWords?.count ?? 0
     }

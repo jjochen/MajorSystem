@@ -10,18 +10,29 @@ import SwiftUI
 struct NumberDetailView: View {
     let number: Number
 
+    #warning("initial value not set")
+    @State private var selectedWord: Word? {
+        didSet {
+            number.mainWord = selectedWord
+        }
+    }
+
     var body: some View {
-        VStack {
+        List(selection: $selectedWord) {
             HStack {
-                Text(number.mainWordValue)
-                    .font(.title)
-                Spacer()
                 number.image
                     .frame(width: 70, height: 70)
+                    .padding([.trailing, .vertical])
+                Text(number.mainWordValue)
+                    .font(.title)
             }
-            Spacer()
+            Section(header: Text("Words")) {
+                ForEach(number.sortedWords, id: \.self) { word in
+                    Text(word.wrappedValue)
+                }
+            }
         }
-        .padding(.all)
+        .environment(\.editMode, .constant(EditMode.active))
         .navigationTitle(number.displayString)
     }
 }
