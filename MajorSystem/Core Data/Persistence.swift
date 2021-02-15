@@ -39,41 +39,41 @@ extension PersistenceController {
     static let previewNumbers =
         [
             1: [
-                0: "CIA",
-                1: "tea",
-                2: "Noah",
-                3: "home",
-                4: "raw",
-                5: "loo",
-                6: "shoe",
-                7: "cow",
-                8: "foe",
-                9: "bee",
+                0: ["CIA"],
+                1: ["tea"],
+                2: ["Noah"],
+                3: ["home"],
+                4: ["raw"],
+                5: ["loo"],
+                6: ["shoe"],
+                7: ["cow"],
+                8: ["foe"],
+                9: ["bee"],
             ],
             2: [
-                00: "sushi",
-                01: "seed",
-                02: "sun",
-                03: "sumo",
-                04: "czar",
-                05: "seal",
-                06: "switch",
-                07: "sock",
-                08: "safe",
-                09: "soap",
-                10: "dice",
-                11: "toad",
-                12: "dino",
-                13: "dam",
-                14: "tire",
-                15: "doll",
-                16: "tissue",
-                17: "dick",
-                18: "TV",
-                19: "tipi",
-                20: "noose",
-                21: "knight",
-                22: "onion",
+                00: ["sushi"],
+                01: ["seed"],
+                02: ["sun"],
+                03: ["sumo"],
+                04: ["czar"],
+                05: ["seal"],
+                06: ["switch"],
+                07: ["sock"],
+                08: ["safe"],
+                09: ["soap", "soup", "spa", "spy"],
+                10: ["dice"],
+                11: ["toad"],
+                12: ["dino"],
+                13: ["dam"],
+                14: ["tire"],
+                15: ["doll"],
+                16: ["tissue"],
+                17: ["dick"],
+                18: ["TV"],
+                19: ["tipi"],
+                20: ["noose"],
+                21: ["knight"],
+                22: ["onion"],
             ],
         ]
 
@@ -82,10 +82,12 @@ extension PersistenceController {
         let viewContext = result.container.viewContext
         let mapping = viewContext.createMapping(withName: "preview")
 
-        for (numberOfDigits, numbers) in previewNumbers {
-            for (value, word) in numbers {
+        previewNumbers.forEach { numberOfDigits, numbers in
+            numbers.forEach { value, words in
                 let number = mapping.addNumber(withValue: Int32(value), numberOfDigits: Int16(numberOfDigits), inContext: viewContext)
-                number.addWord(withValue: word, useAsMain: true, inContext: viewContext)
+                words.forEach { word in
+                    number.addWord(withValue: word, inContext: viewContext)
+                }
             }
         }
 
