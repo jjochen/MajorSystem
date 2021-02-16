@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NumberRow: View {
-    var number: Number
+    @ObservedObject var number: Number
 
     var body: some View {
         HStack {

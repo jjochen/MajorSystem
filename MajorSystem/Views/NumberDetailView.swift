@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NumberDetailView: View {
-    let number: Number
+    @ObservedObject var number: Number
     @State private var selectedWord: Word?
 
     init(number: Number) {
@@ -17,13 +17,15 @@ struct NumberDetailView: View {
     }
 
     var body: some View {
-        List(selection: Binding(
+        let selection = Binding(
             get: { self.selectedWord },
             set: { word in
                 self.selectedWord = word
                 self.number.mainWord = word
             }
-        )) {
+        )
+
+        return List(selection: selection) {
             HStack {
                 number.image
                     .frame(width: 70, height: 70)
