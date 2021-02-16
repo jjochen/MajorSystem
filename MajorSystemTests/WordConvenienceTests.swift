@@ -27,7 +27,7 @@ class WordConvenienceTests: XCTestCase {
         let word2 = number.addWord(withValue: "word 2", inContext: context)
 
         XCTAssertEqual(number.mainWord, word1)
-        word2.setAsMainWord()
+        word2.useAsMainWord()
         XCTAssertEqual(number.mainWord, word2)
     }
 

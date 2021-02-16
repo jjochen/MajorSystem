@@ -9,16 +9,21 @@ import SwiftUI
 
 struct NumberDetailView: View {
     let number: Number
+    @State private var selectedWord: Word?
 
-    #warning("initial value not set")
-    @State private var selectedWord: Word? {
-        didSet {
-            number.mainWord = selectedWord
-        }
+    init(number: Number) {
+        self.number = number
+        _selectedWord = State(initialValue: number.mainWord)
     }
 
     var body: some View {
-        List(selection: $selectedWord) {
+        List(selection: Binding(
+            get: { self.selectedWord },
+            set: { word in
+                self.selectedWord = word
+                self.number.mainWord = word
+            }
+        )) {
             HStack {
                 number.image
                     .frame(width: 70, height: 70)

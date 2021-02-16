@@ -17,7 +17,7 @@ extension Word {
         isMainWordOfNumber != nil
     }
 
-    func setAsMainWord() {
+    func useAsMainWord() {
         number?.mainWord = self
     }
 
