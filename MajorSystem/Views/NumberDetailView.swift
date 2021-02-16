@@ -9,23 +9,9 @@ import SwiftUI
 
 struct NumberDetailView: View {
     @ObservedObject var number: Number
-    @State private var selectedWord: Word?
-
-    init(number: Number) {
-        self.number = number
-        _selectedWord = State(initialValue: number.mainWord)
-    }
-
+    
     var body: some View {
-        let selection = Binding(
-            get: { self.selectedWord },
-            set: { word in
-                self.selectedWord = word
-                self.number.mainWord = word
-            }
-        )
-
-        return List(selection: selection) {
+        List(selection: $number.mainWordSelection) {
             HStack {
                 number.image
                     .frame(width: 70, height: 70)
@@ -41,6 +27,20 @@ struct NumberDetailView: View {
         }
         .environment(\.editMode, .constant(EditMode.active))
         .navigationTitle(number.displayString)
+    }
+}
+
+private extension Number {
+    var mainWordSelection: Word? {
+        get {
+            mainWord
+        }
+        set {
+            objectWillChange.send()
+            if newValue != nil {
+                mainWord = newValue
+            }
+        }
     }
 }
 
