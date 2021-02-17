@@ -12,6 +12,7 @@
 		193F473725A7A3B60062A7B0 /* NumberDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193F473625A7A3B50062A7B0 /* NumberDetailView.swift */; };
 		198454A42590CCC100684C12 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198454A32590CCC100684C12 /* UserPreferences.swift */; };
 		198454B0259DE36C00684C12 /* EnvironmentValues+UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198454AF259DE36C00684C12 /* EnvironmentValues+UserPreferences.swift */; };
+		198F09FE25DD024000AA22EB /* WordRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198F09FD25DD024000AA22EB /* WordRow.swift */; };
 		19D34C57258810B8002AE9DA /* WordImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D34C56258810B8002AE9DA /* WordImageView.swift */; };
 		19D34C652588C26C002AE9DA /* Number+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D34C642588C26C002AE9DA /* Number+Convenience.swift */; };
 		19D34C6D2588C49F002AE9DA /* Word+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D34C6C2588C49F002AE9DA /* Word+CoreData.swift */; };
@@ -57,6 +58,7 @@
 		193F473625A7A3B50062A7B0 /* NumberDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberDetailView.swift; sourceTree = "<group>"; };
 		198454A32590CCC100684C12 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
 		198454AF259DE36C00684C12 /* EnvironmentValues+UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+UserPreferences.swift"; sourceTree = "<group>"; };
+		198F09FD25DD024000AA22EB /* WordRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordRow.swift; sourceTree = "<group>"; };
 		19D34C56258810B8002AE9DA /* WordImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordImageView.swift; sourceTree = "<group>"; };
 		19D34C642588C26C002AE9DA /* Number+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Number+Convenience.swift"; sourceTree = "<group>"; };
 		19D34C6C2588C49F002AE9DA /* Word+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Word+CoreData.swift"; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 			children = (
 				19F0246A257A490E0017DBFE /* NumbersOrganizerView.swift */,
 				19F025502587645D0017DBFE /* NumberRow.swift */,
+				198F09FD25DD024000AA22EB /* WordRow.swift */,
 				19D34C56258810B8002AE9DA /* WordImageView.swift */,
 				19F024E9257D7A460017DBFE /* NumbersOrganizerPreferencesView.swift */,
 				193F473625A7A3B50062A7B0 /* NumberDetailView.swift */,
@@ -374,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				198F09FE25DD024000AA22EB /* WordRow.swift in Sources */,
 				19F024EA257D7A460017DBFE /* NumbersOrganizerPreferencesView.swift in Sources */,
 				19F0253A25823B340017DBFE /* Word+Convenience.swift in Sources */,
 				19F02472257A49100017DBFE /* Persistence.swift in Sources */,

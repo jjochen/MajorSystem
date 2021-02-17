@@ -32,4 +32,8 @@ extension Word {
             imageData = image?.pngData()
         }
     }
+
+    var image: WordImageView {
+        WordImageView(image: uiImage)
+    }
 }

@@ -107,5 +107,12 @@ extension PersistenceController {
         let number = try! context.fetchOrCreateNumber(withValue: 9, numberOfDigits: 2, inMappingWithName: "preview")
         return number
     }
+
+    static var previewWord: Word {
+        let context = PersistenceController.preview.container.viewContext
+        let number: Number! = try! context.fetchOrCreateNumber(withValue: 9, numberOfDigits: 2, inMappingWithName: "preview")
+        let word: Word! = number.mainWord
+        return word
+    }
 }
 #endif

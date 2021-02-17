@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NumberDetailView: View {
     @ObservedObject var number: Number
-    
+
     var body: some View {
         List(selection: $number.mainWordSelection) {
             HStack {
@@ -21,7 +21,7 @@ struct NumberDetailView: View {
             }
             Section(header: Text("Words")) {
                 ForEach(number.sortedWords, id: \.self) { word in
-                    Text(word.wrappedValue)
+                    WordRow(word: word)
                 }
             }
         }
