@@ -11,7 +11,7 @@ import Foundation
 extension Number {
     @discardableResult
     func addWord(withValue value: String, inContext context: NSManagedObjectContext) -> Word {
-        let useAsMain = !hasWords
+        let useAsMain = isEmpty
         return addWord(withValue: value, useAsMain: useAsMain, inContext: context)
     }
 

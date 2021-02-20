@@ -80,7 +80,8 @@ extension PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        let mapping = viewContext.createMapping(withName: "preview")
+        let settings = viewContext.createSettings()
+        let mapping = settings.addMapping(withName: "preview", inContext: viewContext)
 
         previewNumbers.forEach { numberOfDigits, numbers in
             numbers.forEach { value, words in
@@ -102,16 +103,25 @@ extension PersistenceController {
         return result
     }()
 
+    static var previewSettings: Settings {
+        let context = PersistenceController.preview.container.viewContext
+        let settings: Settings! = try! context.fetchOrCreateSettings()
+        return settings
+    }
+
+    static var previewMapping: Mapping {
+        let mapping: Mapping! = previewSettings.currentMapping
+        return mapping
+    }
+
     static var previewNumber: Number {
         let context = PersistenceController.preview.container.viewContext
-        let number = try! context.fetchOrCreateNumber(withValue: 9, numberOfDigits: 2, inMappingWithName: "preview")
+        let number: Number! = try! context.fetchNumber(withValue: 9, numberOfDigits: 2, inMappingWithName: "preview")
         return number
     }
 
     static var previewWord: Word {
-        let context = PersistenceController.preview.container.viewContext
-        let number: Number! = try! context.fetchOrCreateNumber(withValue: 9, numberOfDigits: 2, inMappingWithName: "preview")
-        let word: Word! = number.mainWord
+        let word: Word! = previewNumber.mainWord
         return word
     }
 }

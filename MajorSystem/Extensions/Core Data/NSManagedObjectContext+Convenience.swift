@@ -28,27 +28,19 @@ extension NSManagedObjectContext {
     }
 }
 
-// MARK: Mapping
+// MARK: Settings
 
 extension NSManagedObjectContext {
-    @discardableResult
-    func createMapping(withName name: String) -> Mapping {
-        let mapping = Mapping(context: self)
-        mapping.name = name
-        return mapping
+    func createSettings() -> Settings {
+        Settings(context: self)
     }
 
-    func fetchMapping(withName name: String) throws -> Mapping? {
-        let predicate = NSPredicate(format: "name == %@", name)
-        let results = try fetchEntities(ofType: Mapping.self, predicate: predicate)
-        return results.first
-    }
-
-    func fetchOrCreateMapping(withName name: String) throws -> Mapping {
-        if let mapping = try fetchMapping(withName: name) {
-            return mapping
+    func fetchOrCreateSettings() throws -> Settings {
+        let results = try fetchEntities(ofType: Settings.self)
+        if let settings = results.first {
+            return settings
         }
-        return createMapping(withName: name)
+        return createSettings()
     }
 }
 
@@ -63,10 +55,5 @@ extension NSManagedObjectContext {
         let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: subpredicates)
         let results = try fetchEntities(ofType: Number.self, predicate: predicate)
         return results.first
-    }
-
-    func fetchOrCreateNumber(withValue value: Int32, numberOfDigits: Int16, inMappingWithName mapping: String) throws -> Number {
-        let mapping = try fetchOrCreateMapping(withName: mapping)
-        return try mapping.fetchOrAddNumber(withValue: value, numberOfDigits: numberOfDigits, inContext: self)
     }
 }

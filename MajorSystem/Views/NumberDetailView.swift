@@ -20,7 +20,7 @@ struct NumberDetailView: View {
                     .font(.title)
             }
             Section(header: Text("Words")) {
-                ForEach(number.sortedWords, id: \.self) { word in
+                ForEach(number.sortedPossibleWords, id: \.self) { word in
                     WordRow(word: word)
                 }
             }

@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct AppView: View {
+    @Environment(\.managedObjectContext) private var viewContext
+
     var body: some View {
-        NumbersOrganizerView()
+        let settings = try! viewContext.fetchOrCreateSettings()
+        let mapping = try! settings.currentOrDefaultMapping(inContext: viewContext)
+        return NumbersOrganizerView(mapping: mapping)
     }
 }
 

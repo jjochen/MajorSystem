@@ -1,30 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="20B29" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20D74" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="Mapping" representedClassName="Mapping" syncable="YES" codeGenerationType="class">
+        <attribute name="maxNumberOfDigits" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="numbers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Number" inverseName="mapping" inverseEntity="Number"/>
-        <relationship name="settings" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Settings" inverseName="currentMapping" inverseEntity="Settings"/>
+        <relationship name="settings" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Settings" inverseName="mappings" inverseEntity="Settings"/>
+        <relationship name="settingsOfCurrentMapping" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Settings" inverseName="currentMapping" inverseEntity="Settings"/>
     </entity>
     <entity name="Number" representedClassName="Number" syncable="YES" codeGenerationType="class">
         <attribute name="numberOfDigits" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="value" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="mainWord" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Word" inverseName="isMainWordOfNumber" inverseEntity="Word"/>
+        <relationship name="mainWord" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Word" inverseName="mainWordOfNumber" inverseEntity="Word"/>
         <relationship name="mapping" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Mapping" inverseName="numbers" inverseEntity="Mapping"/>
         <relationship name="possibleWords" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Word" inverseName="number" inverseEntity="Word"/>
     </entity>
     <entity name="Settings" representedClassName="Settings" syncable="YES" codeGenerationType="class">
-        <relationship name="currentMapping" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Mapping" inverseName="settings" inverseEntity="Mapping"/>
+        <relationship name="currentMapping" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Mapping" inverseName="settingsOfCurrentMapping" inverseEntity="Mapping"/>
+        <relationship name="mappings" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Mapping" inverseName="settings" inverseEntity="Mapping"/>
     </entity>
     <entity name="Word" representedClassName="Word" syncable="YES" codeGenerationType="class">
         <attribute name="imageData" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
         <attribute name="value" optional="YES" attributeType="String"/>
-        <relationship name="isMainWordOfNumber" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Number" inverseName="mainWord" inverseEntity="Number"/>
+        <relationship name="mainWordOfNumber" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Number" inverseName="mainWord" inverseEntity="Number"/>
         <relationship name="number" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Number" inverseName="possibleWords" inverseEntity="Number"/>
     </entity>
     <elements>
-        <element name="Number" positionX="-54" positionY="0" width="128" height="118"/>
-        <element name="Word" positionX="156.3876342773438" positionY="14.0145263671875" width="128" height="103"/>
-        <element name="Mapping" positionX="90" positionY="81" width="128" height="74"/>
-        <element name="Settings" positionX="99" positionY="108" width="128" height="44"/>
+        <element name="Mapping" positionX="-899.7216796875" positionY="819.0828247070312" width="128" height="104"/>
+        <element name="Number" positionX="-726.0867309570312" positionY="793.095947265625" width="128" height="118"/>
+        <element name="Settings" positionX="-861.0966796875" positionY="690.5105590820312" width="128" height="59"/>
+        <element name="Word" positionX="-548.4924926757812" positionY="798.3976745605469" width="128" height="103"/>
     </elements>
 </model>

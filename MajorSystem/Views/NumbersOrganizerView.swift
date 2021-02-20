@@ -9,24 +9,25 @@ import CoreData
 import SwiftUI
 
 struct NumbersOrganizerView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-    @EnvironmentObject private var userPreferences: UserPreferences
+//    @Environment(\.managedObjectContext) private var viewContext
+//    @EnvironmentObject private var userPreferences: UserPreferences
+//    @FetchRequest(
+//        sortDescriptors: [
+//            NSSortDescriptor(keyPath: \Number.numberOfDigits, ascending: true),
+//            NSSortDescriptor(keyPath: \Number.value, ascending: true),
+//        ],
+//        animation: .default
+//    )
+//    private var numbers: FetchedResults<Number>
 
-    @State var showingPreferences = false
+    @State var isPreferencesViewPresented = false
 
-    @FetchRequest(
-        sortDescriptors: [
-            NSSortDescriptor(keyPath: \Number.numberOfDigits, ascending: true),
-            NSSortDescriptor(keyPath: \Number.value, ascending: true),
-        ],
-        animation: .default
-    )
-    private var numbers: FetchedResults<Number>
+    @ObservedObject var mapping: Mapping
 
     var body: some View {
         NavigationView {
             List {
-                ForEach(numbers) { number in
+                ForEach(mapping.sortedNumbers) { number in
                     NavigationLink(destination:
                         NumberDetailView(number: number)) {
                         NumberRow(number: number)
@@ -37,15 +38,15 @@ struct NumbersOrganizerView: View {
             .navigationBarTitle("Numbers")
             .navigationBarItems(trailing:
                 Button(action: {
-                    self.showingPreferences.toggle()
+                    self.isPreferencesViewPresented.toggle()
                 }) {
                     Image(systemName: "switch.2")
                         .font(.system(.title))
                 }
             )
         }
-        .sheet(isPresented: $showingPreferences, content: {
-            NumbersOrganizerPreferencesView(isPresented: self.$showingPreferences)
+        .sheet(isPresented: $isPreferencesViewPresented, content: {
+            NumbersOrganizerPreferencesView(isPresented: self.$isPreferencesViewPresented, settings: mapping.settings!)
         })
     }
 }
@@ -53,8 +54,7 @@ struct NumbersOrganizerView: View {
 #if DEBUG
 struct NumbersOrganizerView_Previews: PreviewProvider {
     static var previews: some View {
-        NumbersOrganizerView()
-            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        NumbersOrganizerView(mapping: PersistenceController.previewMapping)
     }
 }
 #endif
