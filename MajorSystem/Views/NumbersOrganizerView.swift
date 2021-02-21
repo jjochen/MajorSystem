@@ -9,20 +9,8 @@ import CoreData
 import SwiftUI
 
 struct NumbersOrganizerView: View {
-//    @Environment(\.managedObjectContext) private var viewContext
-//    @EnvironmentObject private var userPreferences: UserPreferences
-//    @FetchRequest(
-//        sortDescriptors: [
-//            NSSortDescriptor(keyPath: \Number.numberOfDigits, ascending: true),
-//            NSSortDescriptor(keyPath: \Number.value, ascending: true),
-//        ],
-//        animation: .default
-//    )
-//    private var numbers: FetchedResults<Number>
-
-    @State var isPreferencesViewPresented = false
-
     @ObservedObject var mapping: Mapping
+    @State var isPreferencesViewPresented = false
 
     var body: some View {
         NavigationView {
@@ -46,7 +34,7 @@ struct NumbersOrganizerView: View {
             )
         }
         .sheet(isPresented: $isPreferencesViewPresented, content: {
-            NumbersOrganizerPreferencesView(isPresented: self.$isPreferencesViewPresented, settings: mapping.settings!)
+            NumbersOrganizerPreferencesView(settings: mapping.settings!, isPresented: self.$isPreferencesViewPresented)
         })
     }
 }

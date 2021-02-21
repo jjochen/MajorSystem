@@ -12,12 +12,16 @@ struct WordRow: View {
 
     var body: some View {
         HStack {
-            Text(word.wrappedValue)
-                .font(.headline)
-
-            Spacer()
             word.image
                 .frame(width: 50, height: 50)
+                .padding([.trailing])
+            Text(word.wrappedValue)
+                .font(.headline)
+            Spacer()
+            if word.isMainWord {
+                Image(systemName: "checkmark")
+                    .foregroundColor(.primary)
+            }
         }
     }
 }

@@ -9,8 +9,8 @@ import Combine
 import SwiftUI
 
 struct NumbersOrganizerPreferencesView: View {
-    @Binding var isPresented: Bool
     @ObservedObject var settings: Settings
+    @Binding var isPresented: Bool
 
     var body: some View {
         NavigationView {
@@ -39,8 +39,7 @@ struct NumbersOrganizerPreferencesView: View {
 #if DEBUG
 struct NumbersOrganizerPreferencesView_Previews: PreviewProvider {
     static var previews: some View {
-        #warning("Needs mock object for user preferences")
-        NumbersOrganizerPreferencesView(isPresented: .constant(true), settings: PersistenceController.previewSettings)
+        NumbersOrganizerPreferencesView(settings: PersistenceController.previewSettings, isPresented: .constant(true))
     }
 }
 #endif
