@@ -638,7 +638,7 @@
 				CODE_SIGN_ENTITLEMENTS = MajorSystem/MajorSystem.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"MajorSystem/Preview Content\"";
 				DEVELOPMENT_TEAM = 2TV9GXC7CB;
 				ENABLE_PREVIEWS = YES;
@@ -670,7 +670,7 @@
 				CODE_SIGN_ENTITLEMENTS = MajorSystem/MajorSystem.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"MajorSystem/Preview Content\"";
 				DEVELOPMENT_TEAM = 2TV9GXC7CB;
 				ENABLE_PREVIEWS = YES;
