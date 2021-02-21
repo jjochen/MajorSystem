@@ -10,8 +10,6 @@
 		1921C500258AA4810035216A /* NumberConvenienceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1921C4FF258AA4810035216A /* NumberConvenienceTests.swift */; };
 		1921C505258AA7E50035216A /* WordConvenienceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1921C504258AA7E50035216A /* WordConvenienceTests.swift */; };
 		193F473725A7A3B60062A7B0 /* NumberDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193F473625A7A3B50062A7B0 /* NumberDetailView.swift */; };
-		198454A42590CCC100684C12 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198454A32590CCC100684C12 /* UserPreferences.swift */; };
-		198454B0259DE36C00684C12 /* EnvironmentValues+UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198454AF259DE36C00684C12 /* EnvironmentValues+UserPreferences.swift */; };
 		198F09FE25DD024000AA22EB /* WordRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198F09FD25DD024000AA22EB /* WordRow.swift */; };
 		198F0AC525DDB63100AA22EB /* MappingPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198F0AC425DDB63100AA22EB /* MappingPicker.swift */; };
 		198F0ACD25DDBFBA00AA22EB /* Settings+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198F0ACC25DDBFBA00AA22EB /* Settings+Convenience.swift */; };
@@ -66,8 +64,6 @@
 		1921C4FF258AA4810035216A /* NumberConvenienceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberConvenienceTests.swift; sourceTree = "<group>"; };
 		1921C504258AA7E50035216A /* WordConvenienceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordConvenienceTests.swift; sourceTree = "<group>"; };
 		193F473625A7A3B50062A7B0 /* NumberDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberDetailView.swift; sourceTree = "<group>"; };
-		198454A32590CCC100684C12 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
-		198454AF259DE36C00684C12 /* EnvironmentValues+UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+UserPreferences.swift"; sourceTree = "<group>"; };
 		198F09FD25DD024000AA22EB /* WordRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordRow.swift; sourceTree = "<group>"; };
 		198F0AC425DDB63100AA22EB /* MappingPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingPicker.swift; sourceTree = "<group>"; };
 		198F0ACC25DDBFBA00AA22EB /* Settings+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings+Convenience.swift"; sourceTree = "<group>"; };
@@ -133,15 +129,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		198454A8259DE35200684C12 /* Environment */ = {
-			isa = PBXGroup;
-			children = (
-				198454A32590CCC100684C12 /* UserPreferences.swift */,
-				198454AF259DE36C00684C12 /* EnvironmentValues+UserPreferences.swift */,
-			);
-			path = Environment;
-			sourceTree = "<group>";
-		};
 		19D88E8B25E1B038009B3294 /* Comparable */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,7 +207,6 @@
 				19F024B6257AD6320017DBFE /* Views */,
 				19F024A2257ACBF80017DBFE /* Core Data */,
 				19F025172580E0D80017DBFE /* Extensions */,
-				198454A8259DE35200684C12 /* Environment */,
 				19F024A4257ACC710017DBFE /* Helper */,
 				19F0246E257A49100017DBFE /* Preview Content */,
 				19F024AC257ACD050017DBFE /* Resources */,
@@ -458,9 +444,7 @@
 				19D88EA225E1B5AD009B3294 /* Word+UI.swift in Sources */,
 				198F0AC525DDB63100AA22EB /* MappingPicker.swift in Sources */,
 				19F0246B257A490E0017DBFE /* NumbersOrganizerView.swift in Sources */,
-				198454B0259DE36C00684C12 /* EnvironmentValues+UserPreferences.swift in Sources */,
 				19F025512587645E0017DBFE /* NumberRow.swift in Sources */,
-				198454A42590CCC100684C12 /* UserPreferences.swift in Sources */,
 				19D34C722588C4FB002AE9DA /* Mapping+Convenience.swift in Sources */,
 				19D34C6D2588C49F002AE9DA /* Word+CoreData.swift in Sources */,
 				19D88E7F25E1AD83009B3294 /* Number+Compareable.swift in Sources */,
